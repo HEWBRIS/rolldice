@@ -1,8 +1,43 @@
 <!DOCTYPE html>
 <head>
+    <style>
+        .myLabel {
+            background-color: #f7f7f2;
+            color: #ed41f0;
+        }
+    </style>
+    <script type="text/javascript">
+        function addTwoNumbers () {
+            var num1 = document.getElementById("number1")
+            var num2 = document.getElementById("number2")
+            var divResult = document.getElementById("result");
+            var txtResult = document.getElementById("resultAsTextbox");
+            alert ("The answer is " + divResult.innerHTML);
+
+            divResult.innerHTML =  Number(num1.value) + Number(num2.value);
+            txtResult.value =  Number(num1.value) + Number(num2.value);
+        }
+
+    </script>
 </head>
-  <div>
-    <button type="submit" name="roll 1d6">Roll 1d6</button>
-    var random = Math.floor(Math.random() * 6) + 1;
-  </div>
+<body>
+    <h1>Add Two Numbers</h1>
+    <form>
+        <label for="number1" class="myLabel">Number 1:</label>
+        <input type="text" size="5" id="number1" name="number1" />
+        <br />
+
+        <label for="number1" class="myLabel">Number 2:</label>
+        <input type="text" size="5" id="number2" name="number2" />
+        <br />
+
+        <input type="button" id="addThings" value="Add" onClick="addTwoNumbers();" />
+    </form>
+    <label for="result">Result: </label>
+    <div id="result" style="font-size:16pt; font-weight:bold; color:red;">0</div>
+
+    <br />
+    <label for="resultAsTextbox">Another Result in a Textbox:</label>
+    <input type="text" name="resultAsTextbox" id="resultAsTextbox" value="0" disabled=1 />
+</body>
 </html>
